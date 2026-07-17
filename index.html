@@ -398,6 +398,9 @@ const LINKS = {
   x:        { label: "x.com/Red_Pill_4",          url: "https://x.com/Red_Pill_4" },
 };
 
+/* assembled at runtime so plain-text scrapers don't harvest it */
+const EMAIL = ["hedi", "tebourbi", "001"].join(".") + "@" + ["student", "uni", "lu"].join(".");
+
 const EXPERIENCE = [
   {
     title: "Research Assistant — FSTM, Dept. of Computer Science, University of Luxembourg",
@@ -719,15 +722,16 @@ const TOPICS = {
     keywords: ["contact", "reach", "email", "hire", "linkedin", "github", "touch", "connect"],
     answer: () => `
       <h3>Getting in touch</h3>
-      <p>Hedi keeps it to five channels — all public, all current:</p>
+      <p>Hedi keeps it to six channels — all public, all current:</p>
       <div class="card"><table class="kv">
+        <tr><td>Email</td><td><a href="mailto:${EMAIL}">${EMAIL}</a></td></tr>
         <tr><td>GitHub</td><td>${A(LINKS.github.url, LINKS.github.label)}</td></tr>
         <tr><td>LinkedIn</td><td>${A(LINKS.linkedin.url, LINKS.linkedin.label)}</td></tr>
         <tr><td>Scholar</td><td>${A(LINKS.scholar.url, LINKS.scholar.label)}</td></tr>
         <tr><td>ORCID</td><td>${A(LINKS.orcid.url, LINKS.orcid.label)}</td></tr>
         <tr><td>X</td><td>${A(LINKS.x.url, LINKS.x.label)} <span class="muted small">— a running feed of tech he finds cool</span></td></tr>
       </table></div>
-      <p>The fastest route is a <strong>LinkedIn message</strong>. For anything code-related, opening an issue on the relevant GitHub repo works just as well — he actually reads those.</p>`,
+      <p>The fastest routes are a <strong>LinkedIn message</strong> or a plain old <strong>email</strong>. For anything code-related, opening an issue on the relevant GitHub repo works just as well — he actually reads those.</p>`,
   },
   cv: {
     recent: "Get the CV (PDF)",
