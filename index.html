@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hedi Tebourbi — Ask me anything</title>
+<meta name="description" content="Hedi Tebourbi — CS researcher at the University of Luxembourg. A portfolio you can chat with: projects, publications, experience.">
+<meta property="og:title" content="Hedi Tebourbi — Ask me anything">
+<meta property="og:description" content="A portfolio styled as a chat. Ask about projects, publications, experience.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://redpill47.github.io/">
+<meta property="og:image" content="https://redpill47.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hedi Tebourbi — Ask me anything">
+<meta name="twitter:description" content="A portfolio you can chat with: research, projects, publications.">
+<meta name="twitter:image" content="https://redpill47.github.io/og-image.png">
+<link rel="canonical" href="https://redpill47.github.io/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Hedi Tebourbi",
+  "url": "https://redpill47.github.io/",
+  "jobTitle": "Research Assistant",
+  "worksFor": { "@type": "CollegeOrUniversity", "name": "University of Luxembourg" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Luxembourg" },
+  "knowsAbout": ["Large Language Models", "Low-Resource NLP", "Retrieval-Augmented Generation", "Multi-Agent Systems", "AI in Education", "Luxembourgish"],
+  "knowsLanguage": ["fr", "ar", "en", "de"],
+  "sameAs": [
+    "https://github.com/RedPill47",
+    "https://www.linkedin.com/in/hedit",
+    "https://scholar.google.com/citations?user=Tb6iPjcAAAAJ&hl=en",
+    "https://orcid.org/0009-0006-1282-2820",
+    "https://x.com/Red_Pill_4"
+  ]
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23FAF9F5'/><text x='50' y='72' text-anchor='middle' font-size='62' fill='%23D97757'>✳</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root, :root[data-mode="light"] {
+  --bg: #FAF9F5;
+  --bg-2: #F0EEE6;
+  --bg-3: #E8E6DC;
+  --text: #141413;
+  --text-2: #73726C;
+  --accent: #D97757;
+  --accent-strong: #C6613F;
+  --border: #E4E2D8;
+  --shadow: 0 2px 16px rgba(20, 20, 19, 0.06);
+}
+:root[data-mode="dark"] {
+  --bg: #262624;
+  --bg-2: #30302E;
+  --bg-3: #3A3937;
+  --text: #F0EFEA;
+  --text-2: #A6A39A;
+  --accent: #D97757;
+  --accent-strong: #E88B6C;
+  --border: #3E3D3A;
+  --shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  overflow: hidden;
+}
+.serif { font-family: 'Lora', Georgia, serif; }
+a { color: var(--accent-strong); text-decoration: none; }
+a:hover { text-decoration: underline; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+
+/* ---------- starburst logo ---------- */
+.spark { display: inline-block; color: var(--accent); flex-shrink: 0; }
+.spark svg { display: block; }
+@keyframes spark-spin { to { transform: rotate(180deg); } }
+.spark.thinking svg { animation: spark-spin 1.2s ease-in-out infinite; }
+
+/* ---------- sidebar ---------- */
+#sidebar {
+  width: 264px;
+  flex-shrink: 0;
+  background: var(--bg-2);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 14px 10px;
+  gap: 4px;
+  transition: margin-left 0.25s ease;
+}
+#sidebar .side-head {
+  display: flex; align-items: center; gap: 9px;
+  padding: 6px 10px 14px;
+  font-weight: 600; font-size: 15px;
+}
+#new-chat {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: var(--accent-strong);
+  font-weight: 500;
+}
+#new-chat:hover { background: var(--bg-3); }
+.side-label {
+  font-size: 11.5px; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--text-2);
+  padding: 14px 12px 4px;
+}
+.recent {
+  display: block; width: 100%; text-align: left;
+  padding: 7px 12px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  color: var(--text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.recent:hover { background: var(--bg-3); }
+.recent.active { background: var(--bg-3); }
+.side-foot { margin-top: auto; padding: 8px 4px 2px; border-top: 1px solid var(--border); }
+.side-foot button, .side-foot a {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; padding: 7px 10px;
+  border-radius: 10px; font-size: 13.5px; color: var(--text-2);
+}
+.side-foot button:hover, .side-foot a:hover { background: var(--bg-3); text-decoration: none; color: var(--text); }
+
+/* ---------- main ---------- */
+#main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 18px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+#burger { display: none; font-size: 20px; padding: 4px 8px; border-radius: 8px; }
+#burger:hover { background: var(--bg-2); }
+.model-pill {
+  display: flex; align-items: center; gap: 7px;
+  font-weight: 600; font-size: 14.5px;
+}
+.model-pill .tag {
+  font-size: 11px; font-weight: 600;
+  color: var(--accent-strong);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  border-radius: 99px;
+  padding: 2px 9px;
+}
+header .spacer { flex: 1; }
+header a.gh { color: var(--text-2); font-size: 13.5px; }
+
+#chat {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg-3) transparent;
+}
+.chat-inner { max-width: 46rem; margin: 0 auto; padding: 28px 20px 20px; }
+
+/* greeting (empty state) */
+#greeting { text-align: center; padding: 9vh 8px 20px; }
+#greeting .spark { margin-bottom: 18px; }
+#greeting h1 {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(26px, 4.5vw, 36px);
+  letter-spacing: -0.01em;
+}
+#greeting p { color: var(--text-2); margin-top: 10px; font-size: 15px; }
+#chips {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  justify-content: center;
+  margin-top: 26px;
+}
+.chip {
+  border: 1px solid var(--border);
+  background: var(--bg);
+  border-radius: 99px;
+  padding: 7px 15px;
+  font-size: 13.5px;
+  color: var(--text-2);
+  transition: all 0.15s;
+}
+.chip:hover { border-color: var(--accent); color: var(--text); background: var(--bg-2); }
+
+/* messages */
+.msg-u {
+  display: flex; justify-content: flex-end;
+  margin: 22px 0 18px;
+}
+.msg-u .bubble {
+  background: var(--bg-2);
+  border-radius: 18px;
+  padding: 10px 16px;
+  max-width: 82%;
+  white-space: pre-wrap;
+}
+.msg-a { display: flex; gap: 13px; margin: 18px 0 6px; }
+.msg-a .spark { margin-top: 3px; }
+.msg-a .body { min-width: 0; flex: 1; }
+.thinking-label { color: var(--text-2); font-size: 14px; }
+@keyframes shimmer { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+.thinking-label { animation: shimmer 1.4s ease-in-out infinite; }
+
+.body > * { margin-bottom: 12px; }
+.body > *:last-child { margin-bottom: 0; }
+.body h3 {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600; font-size: 21px;
+  margin-top: 4px;
+}
+.body h4 { font-size: 15px; font-weight: 600; margin-top: 16px; }
+.body ul { padding-left: 20px; }
+.body li { margin: 4px 0; }
+.body li::marker { color: var(--accent); }
+.muted { color: var(--text-2); }
+.small { font-size: 13px; }
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 17px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+.card .card-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 2px; }
+.card .card-title { font-weight: 600; font-size: 15px; }
+.card .card-title a { color: var(--text); }
+.card .card-title a:hover { color: var(--accent-strong); text-decoration: none; }
+.card .card-meta { color: var(--text-2); font-size: 12.5px; white-space: nowrap; align-self: center; }
+.card .card-sub { color: var(--text-2); font-size: 13px; font-style: italic; margin-bottom: 6px; }
+.card ul { font-size: 14px; }
+
+.kv { border-collapse: collapse; width: 100%; }
+.kv td { padding: 7px 16px 7px 0; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 14px; }
+.kv tr:last-child td { border-bottom: none; }
+.kv td:first-child { font-weight: 600; white-space: nowrap; width: 1%; }
+
+.pub { padding: 10px 0; border-bottom: 1px solid var(--border); }
+.pub:last-child { border-bottom: none; }
+.pub .venue {
+  font-size: 11.5px; font-weight: 600; letter-spacing: 0.03em;
+  color: var(--accent-strong);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  border-radius: 6px; padding: 2px 8px;
+  display: inline-block; margin-bottom: 3px;
+}
+.pub .title { font-weight: 500; }
+.pub .authors { color: var(--text-2); font-size: 13px; }
+.pub .authors strong { color: var(--text); font-weight: 600; }
+
+/* streaming reveal */
+.reveal > * { opacity: 0; transform: translateY(6px); animation: rise 0.35s ease forwards; }
+@keyframes rise { to { opacity: 1; transform: none; } }
+
+/* response actions */
+.actions { display: flex; gap: 4px; margin: 6px 0 8px 37px; }
+.actions button {
+  color: var(--text-2); font-size: 12.5px;
+  padding: 4px 8px; border-radius: 8px;
+  display: flex; align-items: center; gap: 5px;
+}
+.actions button:hover { background: var(--bg-2); color: var(--text); }
+
+/* follow-up suggestion chips under answers */
+.followups { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 10px 37px; }
+
+/* composer */
+#composer-wrap { flex-shrink: 0; padding: 8px 20px 14px; }
+#composer {
+  max-width: 46rem; margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  display: flex; align-items: flex-end; gap: 8px;
+  padding: 10px 10px 10px 18px;
+  transition: border-color 0.15s;
+}
+#composer:focus-within { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
+#q {
+  flex: 1; border: none; outline: none; background: transparent;
+  font: inherit; color: inherit;
+  resize: none; max-height: 120px; line-height: 1.5;
+  padding: 3px 0;
+}
+#send {
+  width: 34px; height: 34px; border-radius: 10px;
+  background: var(--accent); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s, opacity 0.15s;
+}
+#send:hover { background: var(--accent-strong); }
+#send:disabled { opacity: 0.35; cursor: default; }
+.fineprint {
+  max-width: 46rem; margin: 8px auto 0;
+  text-align: center; color: var(--text-2); font-size: 11.5px;
+}
+.fineprint a { color: inherit; text-decoration: underline; }
+
+/* toast */
+#toast {
+  position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%) translateY(8px);
+  background: var(--text); color: var(--bg);
+  border-radius: 10px; padding: 8px 16px; font-size: 13px;
+  opacity: 0; pointer-events: none; transition: all 0.25s;
+  z-index: 99;
+}
+#toast.show { opacity: 1; transform: translateX(-50%); }
+
+/* mobile */
+#scrim { display: none; }
+@media (max-width: 860px) {
+  #sidebar {
+    position: fixed; inset: 0 auto 0 0; z-index: 40;
+    margin-left: -280px;
+  }
+  #sidebar.open { margin-left: 0; }
+  #scrim.show {
+    display: block; position: fixed; inset: 0; z-index: 30;
+    background: rgba(20, 20, 19, 0.35);
+  }
+  #burger { display: block; }
+  .msg-u .bubble { max-width: 92%; }
+  .actions { margin-left: 0; }
+  .followups { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal > * { animation: none; opacity: 1; transform: none; }
+  .spark.thinking svg { animation: none; }
+  .thinking-label { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<aside id="sidebar">
+  <div class="side-head"><span class="spark" data-size="20"></span> Hedi Tebourbi</div>
+  <button id="new-chat"><span style="font-size:17px">＋</span> New chat</button>
+  <div class="side-label">Recents</div>
+  <div id="recents"></div>
+  <div class="side-foot">
+    <button id="mode-btn"><span id="mode-icon">◐</span> <span id="mode-label">Dark mode</span></button>
+  </div>
+</aside>
+<div id="scrim"></div>
+
+<div id="main">
+  <header>
+    <button id="burger" aria-label="Menu">☰</button>
+    <div class="model-pill"><span class="spark" data-size="17"></span> Hedi <span class="tag">Sonnet of himself</span></div>
+    <div class="spacer"></div>
+    <a class="gh" href="https://github.com/RedPill47" target="_blank" rel="noopener">GitHub ↗</a>
+  </header>
+
+  <main id="chat"><div class="chat-inner" id="chat-inner">
+    <div id="greeting">
+      <span class="spark" data-size="42"></span>
+      <h1 id="greet-line">Good evening.</h1>
+      <p>I'm Hedi's portfolio. Ask me anything about him — his research, projects, or papers.</p>
+      <div id="chips"></div>
+    </div>
+  </div></main>
+
+  <div id="composer-wrap">
+    <div id="composer">
+      <textarea id="q" rows="1" placeholder="Ask about Hedi…" aria-label="Ask a question"></textarea>
+      <button id="send" aria-label="Send"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 13V3M8 3L3.5 7.5M8 3l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+    <div class="fineprint">
+      This portfolio can't make mistakes — every citation is real.
+      Design homage to <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> by Anthropic · not affiliated
+    </div>
+  </div>
+</div>
+
+<div id="toast" role="status"></div>
+
+<script>
+/* ================= CONTENT (shared with terminal version) ================= */
+
+const LINKS = {
+  github:   { label: "github.com/RedPill47",      url: "https://github.com/RedPill47" },
+  linkedin: { label: "linkedin.com/in/hedit",     url: "https://www.linkedin.com/in/hedit" },
+  scholar:  { label: "Google Scholar",            url: "https://scholar.google.com/citations?user=Tb6iPjcAAAAJ&hl=en" },
+  orcid:    { label: "ORCID 0009-0006-1282-2820", url: "https://orcid.org/0009-0006-1282-2820" },
+  x:        { label: "x.com/Red_Pill_4",          url: "https://x.com/Red_Pill_4" },
+};
+
+const EXPERIENCE = [
+  {
+    title: "Research Assistant — FSTM, Dept. of Computer Science, University of Luxembourg",
+    meta: "Apr 2026 – Present",
+    bullets: [
+      "LLM-based annotation and retrieval-augmented evaluation for Luxembourgish: reproducible Python pipelines orchestrating OpenAI, Anthropic and DeepSeek APIs, with self-hosted Langfuse observability for full prompt and cost traceability.",
+      "Evaluation frameworks scoring LLMs and fine-tuned encoders against expert human annotations across 11 diagnostic linguistic categories.",
+      "Two reproducible open-source studies written up for publication.",
+    ],
+  },
+  {
+    title: "Research Assistant — LISER (Luxembourg Institute of Socio-Economic Research)",
+    meta: "Mar 2026 – Jun 2026",
+    url: "https://www.liser.lu/",
+    bullets: [
+      "Architected the MIGLINK pipeline mapping 594M LinkedIn education records to ROR-standardized university identities (63M+ unique strings), at scale on the MeluXina supercomputer (SLURM).",
+      "Cascading matcher (exact → normalized → LLM via vLLM / Qwen3-32B) with a hard ROR validation gate: 100% precision, 94.8% recall on annotated ground truth.",
+      "Multilingual institution classifier with Unicode script detection across 9 writing systems and a keyword vocabulary spanning 12+ languages.",
+    ],
+  },
+  {
+    title: "Research Assistant — AI Robolab, University of Luxembourg",
+    meta: "Sep 2024 – Mar 2026",
+    url: "https://airobolab.uni.lu/home5/",
+    bullets: [
+      "Led a student team building the Luxembourgish Language Learning App: repo management, PR reviews, backend maintenance, TTS/STT integration.",
+      "Benchmarked open-source LLMs to find cost-efficient replacements for ChatGPT in Luxembourgish; co-authored several peer-reviewed papers.",
+      "Ran the lab's social-robot demos (SoftBank Pepper, Furhat, LuxAI QTrobot) for students, visitors, and the CALM '25 conference.",
+    ],
+  },
+  {
+    title: "Junior Software Developer — Deelan.ai (startup)",
+    meta: "Mar 2025 – Jun 2025",
+    url: "https://deelan.ai/",
+    bullets: [
+      "AI-powered course-generation platform for SMBs: onboarding and auth flows, freemium trial system with role-based access control, email verification.",
+      "Website scraping feeding structured company info into course generation; client-facing Webflow → WordPress migration with SEO-oriented content schemas.",
+    ],
+  },
+];
+
+const PROJECTS = [
+  {
+    id: "atlas",
+    title: "ATLAS — Adaptive Tutoring & Learning via AI Scaffolding",
+    meta: "2025 – now · EIF-funded",
+    url: "https://github.com/RedPill47/Agentic_Socratic_NLP_Tutor-final",
+    sub: "Socratic AI tutoring platform, University of Luxembourg",
+    bullets: [
+      "Curriculum-agnostic AI tutor that guides learners through questioning instead of giving answers — countering the \"cognitive debt\" problem in AI-assisted education.",
+      "FastAPI + Next.js, hybrid multi-agent system (CrewAI) separating real-time tutoring from background analysis (2–4s latency); RAG over educator materials; teacher analytics dashboard.",
+      "Co-authored the Education Innovation Fund grant with Prof. Leon van der Torre (PI) and Dr. Salima Lamsiyah; featured in a <a href='https://www.uni.lu/fstm-en/news/when-the-question-is-the-answer-why-the-best-ai-chatbots-shouldnt-give-you-solutions/' target='_blank' rel='noopener'>university article</a>.",
+    ],
+  },
+  {
+    id: "workbench",
+    title: "LuxDiag Workbench — Interactive Diagnostic Interface",
+    meta: "2026 · EMNLP '26 demo (submitted)",
+    url: "https://github.com/RedPill47/luxdiag-workbench",
+    sub: "Browser-based inspection of two Luxembourgish NLP studies",
+    bullets: [
+      "Unifies a RAG evaluation and an encoder-vs-LLM annotation study on one character-offset coordinate system: retrieved chunks, evidence spans, answers, and annotated tokens all inspectable together.",
+      "Entire UI is a pure function of a JSON schema — any conforming study re-renders with zero code changes; keyless in-browser char-BM25 live retriever.",
+      "Vite, React 19, Tailwind v4, Recharts; <a href='https://luxdiag-workbench.vercel.app' target='_blank' rel='noopener'>live demo</a> + <a href='https://youtu.be/ku5oE6Tuv6E' target='_blank' rel='noopener'>screencast</a>.",
+    ],
+  },
+  {
+    id: "luxrag",
+    title: "LuxDiag-RAG — Diagnostic RAG Evaluation for Luxembourgish",
+    meta: "2026 · LaTeLL 2026 (submitted)",
+    url: "https://github.com/RedPill47/DiagLux-RAG",
+    sub: "Separating retrieval failure from comprehension failure",
+    bullets: [
+      "640-question benchmark across closed-book, oracle, text-restricted and open-corpus RAG settings; retrieval-trap analysis quantifying how distractor spans inflate wrong answers.",
+      "Character n-gram BM25 and hybrid fusion beat off-the-shelf multilingual dense retrieval; evaluated GPT-5.5, DeepSeek v4-pro, Claude Opus 4.8 & Sonnet 4.6.",
+      "Reproducible Python pipeline with 197 automated tests.",
+    ],
+  },
+  {
+    id: "encoders",
+    title: "Fine-Tuned Encoders vs. LLMs for Luxembourgish Annotation",
+    meta: "2026",
+    url: "https://github.com/RedPill47/Lux-ano-pip",
+    sub: "LoRA-tuned LuxemBERT / XLM-R / ModernBERT vs. a multi-LLM pipeline",
+    bullets: [
+      "Encoders win: LuxemBERT 38.7% macro-F1 / 78.0% micro-F1 vs. 30.7% / 24.2% for the best LLM — trained on a 4 GB GTX 1050 Ti in under two hours.",
+      "Uncovered a three-regime division of labour (encoders win surface morpho-orthographic categories, LLMs keep world-knowledge ones).",
+    ],
+  },
+  {
+    id: "prosody",
+    title: "Prosody Manipulation for Voice-Based AI Agents",
+    meta: "2025 – now · CUI 2026 paper",
+    url: "https://voxflux.github.io/cui26-voices/",
+    sub: "Bachelor Semester Project 5 & 6",
+    bullets: [
+      "How pitch, tempo, emphasis and emotional tone shape persuasion and trust in banking / insurance voice-agent scenarios; ran the full human-subject study.",
+      "Built the study platform (React, Node, Express, SQLite): phone-call simulator, randomized stimuli, live researcher dashboard over WebSockets.",
+    ],
+  },
+  {
+    id: "klangwee",
+    title: "KlangWee — AI Concert Journey Composer",
+    meta: "2026 · Philharmonie Luxembourg AI Lab Challenge",
+    url: "https://www.linkedin.com/embed/feed/update/urn:li:share:7463487961838313473?collapsed=1",
+    sub: "Personalised 3-concert journeys with a hidden musical arc",
+    bullets: [
+      "LangGraph multi-agent pipeline: knowledge-graph concert selector, streaming narrator, critic node, dramaturg scoring formula; DeepSeek slot-fill fallback.",
+      "FastAPI (async SQLAlchemy, PostgreSQL) + Nuxt 3 / Vue 3 with SSE streaming; Spotify API previews; Docker Compose deploy.",
+    ],
+  },
+  {
+    id: "tmap",
+    title: "T-MAP — Collaborative Spatial Mind-Mapping in VR",
+    meta: "2025 – 2026 · XRTransitions '26 (submitted)",
+    sub: "Transition-aware framework, User Centered Design project",
+    bullets: [
+      "Five-layer framework + quantitative transition-burden index; Unity prototype on Meta Quest with private/shared states, role indicators, consensus pins.",
+      "Within-subjects pilot with 10 two-person teams: burden dropped (B: 0.74 → −0.74) with better flow, awareness and map coherence.",
+    ],
+  },
+  {
+    id: "homelab",
+    title: "HomeLab — Self-Hosted Infrastructure",
+    meta: "ongoing · personal",
+    sub: "Repurposed hardware turned Linux playground",
+    bullets: [
+      "Docker + Portainer, AdGuard Home DNS filtering, NGINX Proxy Manager, n8n and self-hosted AI tools, all over a Tailscale mesh VPN.",
+    ],
+  },
+];
+
+const ARCHIVE = [
+  { title: "LetzLearn", sub: "AI Luxembourgish learning app — Next.js, Supabase, ElevenLabs (GenAI course)", url: "https://github.com/RedPill47/LetzLearn-AI-Powered-Luxembourgish-Language-Learning-App" },
+  { title: "AIA-PAL", sub: "Adaptive-learning multi-agent backend — LangGraph + CrewAI (BSP3 → publication)", url: "https://github.com/RedPill47/ALIA-PAL" },
+  { title: "Luxembourgish Learning App (AI Robolab)", sub: "LangGraph agents + React; led maintenance → publications" },
+  { title: "Personalized Learning with ChatGPT", sub: "CrewAI + Django + React study assistant (BSP2)", url: "https://github.com/RedPill47/Personalized_Learning_with_ChatGPT" },
+  { title: "Coffee Shop App", sub: "Team software-engineering project — Git workflow, reviews, modular design", url: "https://github.com/RedPill47/coffee-shop-demo-app" },
+];
+
+const PUBLICATIONS = [
+  { venue: "AAMAS '25", venueUrl: "https://aamas2025.org/",
+    title: "Personalized Language Learning: A Multi-Agent System Leveraging LLMs for Teaching Luxembourgish",
+    authors: "<strong>H. Tebourbi</strong>, S. Nouzri, Y. Mualla, A. Najjar",
+    link: { label: "PDF", url: "https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p3032.pdf" } },
+  { venue: "MobiSPC '25", venueUrl: "https://cs-conferences.acadiau.ca/mobispc-25/",
+    title: "Artificial Intelligence Agents for Personalized Adaptive Learning",
+    authors: "<strong>H. Tebourbi</strong>, S. Nouzri, Y. Mualla, A. Abbas-Turki",
+    link: { label: "DOI", url: "https://doi.org/10.1016/j.procs.2025.07.179" } },
+  { venue: "MDPI Information '25", venueUrl: "https://www.mdpi.com/2078-2489/16/9/809",
+    title: "BPMN-Based Design of Multi-Agent Systems: Personalized Language Learning Workflow Automation",
+    authors: "<strong>H. Tebourbi</strong>, S. Nouzri, Y. Mualla, M. El Fatimi, A. Najjar, A. Abbas-Turki, M. Dridi",
+    link: { label: "DOI", url: "https://www.mdpi.com/2078-2489/16/9/809" } },
+  { venue: "EUSPN '25", venueUrl: "https://cs-conferences.acadiau.ca/euspn-25/",
+    title: "Can Visual Attention Serve as an Explanation?",
+    authors: "P. Kluczynski, F.-Z. El-Qoraychy, Y. Mualla, M. Dridi, <strong>H. Tebourbi</strong>, S. Nouzri",
+    link: { label: "DOI", url: "https://doi.org/10.1016/j.procs.2025.10.200" } },
+  { venue: "CALM '25", venueUrl: "https://www.ciad-lab.fr/the-2nd-international-workshop-on-causality-agents-and-large-models-calm/",
+    title: "Augmenting an LLM-Based Tutor Agent with a Large Action Model for Multimodal Interaction",
+    authors: "P. Kluczyński, Y. Mualla, S. Nouzri, <strong>H. Tebourbi</strong>, A. Picard, F. Gechter, A. Abbas-Turki",
+    link: { label: "DOI", url: "https://doi.org/10.1007/978-3-032-20548-3_3" } },
+  { venue: "ACM CUI '26", venueUrl: "https://cui.acm.org/2026/",
+    title: "How Authoritative Can Synthetic Voices Sound? Prosodic Manipulation and Perceptual Evaluation Across Two TTS Platforms",
+    authors: "<strong>H. Tebourbi</strong>, A. Stassart, S. Rastegar, S. Vijapurapu, A. Sergeeva, A. Leschanowsky",
+    link: { label: "DOI", url: "https://doi.org/10.1145/3816046.3816298" } },
+];
+
+const SERVICE = [
+  { name: "AAMAS 2026 (Demonstrations)", detail: "Paphos, Cyprus", url: "https://cyprusconferences.org/aamas2026/call-for-demonstrations/" },
+  { name: "MobiSPC 2026", detail: "Athens, Greece", url: "https://cs-conferences.acadiau.ca/mobispc-26/" },
+  { name: "EUSPN 2026", detail: "Almaty, Kazakhstan", url: "https://cs-conferences.acadiau.ca/euspn-26/" },
+  { name: "CALM 2026", detail: "Istanbul, Türkiye", url: "https://www.ciad-lab.fr/calm-26/" },
+  { name: "CALM 2025", detail: "Luxembourg", url: "https://www.ciad-lab.fr/the-2nd-international-workshop-on-causality-agents-and-large-models-calm/" },
+  { name: "ArtInHCI 2025", detail: "Nanning, China", url: "https://www.artinhci.com/2025/" },
+];
+
+const EXTRAS = [
+  { name: "SAUL — Student Association for University Campus Life", detail: "Board member & social media manager (2024 – present)", url: "https://www.uni.lu/life-en/social-life/student-associations-clubs/saul/" },
+  { name: "Study Programme Representative, BiCS", detail: "Student voice in the programme steering committee (2023 – 2026)" },
+  { name: "Lex Vitae Podcast", detail: "Co-host & co-creator — evidence-based study & wellbeing tips (2024 – 2025)", url: "https://open.spotify.com/show/5PVgeVvvWKVgj9OybVkql9" },
+  { name: "ACM Student Member", detail: "2026 – present", url: "https://www.acm.org/" },
+];
+
+const SKILLS = [
+  ["Languages", "Python · JavaScript / TypeScript · Java · Haskell · Prolog · HTML/CSS/PHP"],
+  ["Frameworks", "FastAPI · Django · React · Next.js · Nuxt / Vue · Vite"],
+  ["AI / LLM", "LangGraph · CrewAI · LangChain · RAG · vLLM · Supabase · Langfuse"],
+  ["Infra", "Docker · Git/GitHub · SLURM (MeluXina) · NGINX · Tailscale · GitHub Actions · Vercel / Netlify"],
+  ["Spoken", "French (native) · Arabic (native) · English (C1) · German (B1)"],
+];
+
+const EDUCATION = [
+  { title: "MSc in Information and Computer Sciences — University of Luxembourg", meta: "2026 – 2028 · incoming" },
+  { title: "BSc in Computer Science (BiCS) — University of Luxembourg", meta: "2023 – 2026 · graduated" },
+  { title: "Erasmus+ Exchange — University of Łódź, Poland", meta: "Mar – Jul 2025" },
+  { title: "Baccalauréat — International School of Carthage, Tunisia", meta: "2022 · Mention Très Bien" },
+];
+
+/* ================= RENDER HELPERS ================= */
+
+function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+function A(url, label) { return `<a href="${url}" target="_blank" rel="noopener">${label}</a>`; }
+
+function card(o) {
+  const title = o.url ? A(o.url, esc(o.title)) : esc(o.title);
+  return `<div class="card">
+    <div class="card-head"><span class="card-title">${title}</span><span class="card-meta">${esc(o.meta || "")}</span></div>
+    ${o.sub ? `<div class="card-sub">${esc(o.sub)}</div>` : ""}
+    ${o.bullets ? `<ul>${o.bullets.map((b) => `<li>${b}</li>`).join("")}</ul>` : ""}
+  </div>`;
+}
+
+/* ================= TOPICS ================= */
+
+const TOPICS = {
+  about: {
+    recent: "Who is Hedi Tebourbi?",
+    chip: "Who is Hedi?",
+    keywords: ["who", "about", "hedi", "yourself", "intro", "bio"],
+    answer: () => `
+      <p>Hedi Tebourbi is a <strong>computer science researcher at the University of Luxembourg</strong> (FSTM, Department of Computer Science). He just graduated with a Bachelor in Computer Science (BiCS, 2023–2026) and is pursuing a <strong>Master in Information and Computer Sciences</strong> at the same university, alongside his work as a research assistant.</p>
+      <p>His work sits at the intersection of a few themes:</p>
+      <ul>
+        <li><strong>LLMs for low-resource languages</strong> — especially Luxembourgish: annotation, evaluation, and RAG.</li>
+        <li><strong>Multi-agent systems</strong> — LangGraph and CrewAI pipelines for adaptive, personalized learning.</li>
+        <li><strong>AI in education</strong> — Socratic tutoring that asks questions instead of handing out answers.</li>
+      </ul>
+      <p>Along the way he's picked up <strong>6 peer-reviewed publications</strong> (AAMAS, MobiSPC, MDPI, EUSPN, CALM, CUI), reviews for several international venues, and did an Erasmus+ semester in Łódź, Poland.</p>
+      <p>The short version: he spent his bachelor's doing the kind of work that usually starts in a master's — publishing, peer-reviewing, and shipping research software people actually use.</p>
+      <p class="muted small">Want to go deeper? Ask about his projects, publications, or experience — or pick something from the sidebar.</p>`,
+  },
+  experience: {
+    recent: "Research experience deep-dive",
+    chip: "What's his experience?",
+    keywords: ["experience", "work", "job", "position", "career", "liser", "robolab", "deelan", "fstm"],
+    answer: () => `
+      <h3>Professional experience</h3>
+      <p>Hedi's CV has an unusual shape for someone who just finished a bachelor's degree: <strong>three research positions and a startup role</strong>, held in parallel with his studies rather than after them. In rough order of recency:</p>
+      ${EXPERIENCE.map(card).join("")}
+      <p>What ties these together is that he keeps ending up as the person who <em>builds the pipeline</em> — whether that's LLM evaluation infrastructure at FSTM, a 594-million-record harmonization system on a supercomputer at LISER, or a robot demo that has to work in front of a live audience at the Robolab.</p>
+      <p class="muted small">Happy to expand on any of these — just ask about LISER, the AI Robolab, or Deelan specifically.</p>`,
+  },
+  projects: {
+    recent: "Featured projects tour",
+    chip: "Show me his projects",
+    keywords: ["project", "built", "build", "portfolio", "working on", "showcase"],
+    answer: () => `
+      <h3>Featured projects</h3>
+      <p>This is where Hedi spends most of his energy. Almost everything orbits two themes — <strong>AI for education</strong> and <strong>NLP for Luxembourgish</strong>, a language most models barely speak — with the occasional side quest into VR or classical music. Here's what I'd show you first:</p>
+      ${PROJECTS.map(card).join("")}
+      <h4>The back catalogue</h4>
+      <p>Earlier course projects, each one a visible stepping stone toward the work above:</p>
+      <ul>${ARCHIVE.map((p) => `<li>${p.url ? A(p.url, esc(p.title)) : `<strong>${esc(p.title)}</strong>`} <span class="muted">— ${esc(p.sub)}</span></li>`).join("")}</ul>
+      <p class="muted small">If you only have time for three: ATLAS, the LuxDiag Workbench, and the encoder-vs-LLM study — between them they cover product-building, research tooling, and empirical rigor.</p>`,
+  },
+  publications: {
+    recent: "Publication list with links",
+    chip: "His publications",
+    keywords: ["publication", "paper", "research", "published", "aamas", "cui", "mdpi", "doi", "cite", "scholar"],
+    answer: () => `
+      <h3>Publications</h3>
+      <p>Six peer-reviewed papers so far — <strong>four of them first-authored</strong>, which is genuinely uncommon before a master's degree. The full record lives on ${A(LINKS.scholar.url, "Google Scholar")}; here's what's in it:</p>
+      <div class="card" style="padding-top:4px;padding-bottom:4px">
+      ${PUBLICATIONS.map((p) => `<div class="pub">
+        <span class="venue">${p.venueUrl ? A(p.venueUrl, p.venue) : p.venue}</span>
+        ${p.link ? `<span class="muted small"> ${A(p.link.url, p.link.label + " ↗")}</span>` : ""}
+        <div class="title">${esc(p.title)}</div>
+        <div class="authors">${p.authors}</div>
+      </div>`).join("")}
+      </div>
+      <p class="muted small">If you're looking for the through-line: multi-agent systems meet language learning — first building AI tutors (AAMAS, MobiSPC, MDPI), then turning a critical eye on how such systems should be evaluated (CUI, plus two papers currently under review).</p>`,
+  },
+  skills: {
+    recent: "Tech stack overview",
+    chip: "Skills & stack",
+    keywords: ["skill", "stack", "language", "framework", "tech", "tool", "python", "speak"],
+    answer: () => `
+      <h3>Skills</h3>
+      <p>A fair one-line summary would be: <strong>Python for research, TypeScript for products, Docker for everything</strong>. The fuller picture:</p>
+      <div class="card"><table class="kv">${SKILLS.map(([k, v]) => `<tr><td>${k}</td><td>${esc(v)}</td></tr>`).join("")}</table></div>
+      <p>Two things the table undersells: he's comfortable running jobs on an actual supercomputer (MeluXina, via SLURM), and he speaks four human languages on top of the programming ones — which turns out to be rather useful when your research subject is multilingual NLP.</p>`,
+  },
+  education: {
+    recent: "Education history",
+    chip: "Education",
+    keywords: ["education", "degree", "study", "studies", "bachelor", "university", "erasmus", "school"],
+    answer: () => `
+      <h3>Education</h3>
+      <p>Hedi just graduated — <strong>BiCS class of 2026</strong> — and he's not going far: he's staying at the University of Luxembourg for a <strong>Master in Information and Computer Sciences</strong>, starting this autumn.</p>
+      ${EDUCATION.map(card).join("")}
+      <p class="muted small">The Erasmus semester in Poland is where the international streak started; the publishing and peer-reviewing followed soon after. By graduation he'd co-authored six papers — ask me about them.</p>`,
+  },
+  service: {
+    recent: "Peer review service",
+    keywords: ["service", "review", "reviewer", "committee", "acm"],
+    answer: () => `
+      <h3>Academic service</h3>
+      <p>Peer review is usually a grad-school-and-up activity, but Hedi has already been invited to review for <strong>six international venues</strong> in AI, HCI, and multi-agent systems:</p>
+      <ul>${SERVICE.map((s) => `<li>${s.url ? A(s.url, esc(s.name)) : esc(s.name)} <span class="muted">— ${esc(s.detail)}</span></li>`).join("")}</ul>
+      <p>He's also an ${A("https://www.acm.org/", "ACM student member")}. And if you've ever wondered who writes those "Reviewer 2" comments — for these venues, occasionally him. He assures me he's the kind one.</p>`,
+  },
+  activities: {
+    recent: "Beyond the code",
+    keywords: ["activities", "extracurricular", "podcast", "saul", "hobby", "hobbies", "association", "fun", "beyond", "volunteer"],
+    answer: () => `
+      <h3>Beyond the code</h3>
+      <p>Not everything is repositories and rebuttals. A few things Hedi does — or has done — with the other hours of the day:</p>
+      <ul>
+        <li>He's an elected board member of ${A("https://www.uni.lu/life-en/social-life/student-associations-clubs/saul/", "SAUL")}, the student association behind campus life and events, where he runs social media — and works shifts at the events themselves (2024 – present).</li>
+        <li>He served as <strong>Study Programme Representative</strong> for the BiCS bachelor: the students' voice in the programme's steering committee, and the person classmates went to when something needed fixing (2023 – 2026).</li>
+        <li>He co-created and co-hosted ${A("https://open.spotify.com/show/5PVgeVvvWKVgj9OybVkql9", "Lex Vitae")}, a podcast on evidence-based studying and student wellbeing — complete with a psychologist guest and a companion Substack newsletter (2024 – 2025).</li>
+        <li>He's an ${A("https://www.acm.org/", "ACM student member")} (2026 – present).</li>
+      </ul>
+      <p class="muted small">The pattern, if you squint: wherever there's a community, he ends up organizing part of it.</p>`,
+  },
+  contact: {
+    recent: "Getting in touch",
+    chip: "How do I contact him?",
+    keywords: ["contact", "reach", "email", "hire", "linkedin", "github", "touch", "connect"],
+    answer: () => `
+      <h3>Getting in touch</h3>
+      <p>Hedi keeps it to five channels — all public, all current:</p>
+      <div class="card"><table class="kv">
+        <tr><td>GitHub</td><td>${A(LINKS.github.url, LINKS.github.label)}</td></tr>
+        <tr><td>LinkedIn</td><td>${A(LINKS.linkedin.url, LINKS.linkedin.label)}</td></tr>
+        <tr><td>Scholar</td><td>${A(LINKS.scholar.url, LINKS.scholar.label)}</td></tr>
+        <tr><td>ORCID</td><td>${A(LINKS.orcid.url, LINKS.orcid.label)}</td></tr>
+        <tr><td>X</td><td>${A(LINKS.x.url, LINKS.x.label)} <span class="muted small">— a running feed of tech he finds cool</span></td></tr>
+      </table></div>
+      <p>The fastest route is a <strong>LinkedIn message</strong>. For anything code-related, opening an issue on the relevant GitHub repo works just as well — he actually reads those.</p>`,
+  },
+  cv: {
+    recent: "Get the CV (PDF)",
+    chip: "Download his CV",
+    keywords: ["cv", "resume", "résumé", "pdf", "download"],
+    answer: () => `
+      <h3>The CV</h3>
+      <p>Of course — sometimes you just need the boring-but-portable version for the pipeline. Here it is:</p>
+      <div class="card"><p style="margin:0">📄 <a href="./Hedi_Tebourbi_CV.pdf" download><strong>Hedi_Tebourbi_CV.pdf</strong></a> <span class="muted small">— one page… ish. Everything on this site, minus me.</span></p></div>
+      <p class="muted small">Fair warning: the PDF doesn't answer follow-up questions.</p>`,
+  },
+  availability: {
+    recent: "Is he available for hire?",
+    keywords: ["available", "availability", "hire", "hiring", "looking", "opportunity", "opportunities", "internship", "job", "jobs", "recruit", "recruiting", "freelance", "collaborate", "collaboration"],
+    answer: () => `
+      <h3>Availability</h3>
+      <p>Short answer: <strong>not actively looking right now.</strong> Hedi just graduated and is starting his Master in Information and Computer Sciences at the University of Luxembourg this autumn, alongside his research assistant work — his hands are pleasantly full.</p>
+      <p>That said, he's always glad to hear about research collaborations and genuinely interesting problems — especially anything near low-resource NLP, RAG evaluation, or AI in education. The worst case is a polite no; the best case is a new paper.</p>`,
+  },
+};
+
+/* follow-up suggestions rendered under each answer, Claude-style */
+const FOLLOWUPS = {
+  about:        [["His featured projects", "projects"], ["The publications", "publications"], ["Download the CV", "cv"]],
+  experience:   [["Featured projects", "projects"], ["Deep dive: ATLAS", "p:atlas"], ["Is he available?", "availability"]],
+  projects:     [["Deep dive: ATLAS", "p:atlas"], ["Deep dive: LuxDiag Workbench", "p:workbench"], ["The papers behind these", "publications"]],
+  publications: [["The prosody study", "p:prosody"], ["Encoders vs. LLMs", "p:encoders"], ["Academic service", "service"]],
+  skills:       [["Where the infra skills come from", "p:homelab"], ["Featured projects", "projects"]],
+  education:    [["The publications", "publications"], ["Experience", "experience"]],
+  service:      [["The publications", "publications"], ["Contact", "contact"]],
+  activities:   [["Back to the research", "about"], ["Contact", "contact"]],
+  contact:      [["Is he available?", "availability"], ["Download the CV", "cv"]],
+  cv:           [["Is he available?", "availability"], ["How to reach him", "contact"]],
+  availability: [["How to reach him", "contact"], ["Download the CV", "cv"]],
+  project:      [["All projects", "projects"], ["The publications", "publications"]],
+};
+
+/* per-project deep dives: "tell me about ATLAS" etc. */
+const PROJECT_DEEP = {
+  atlas: {
+    keywords: ["atlas", "socratic", "tutor", "tutoring"],
+    extra: `
+      <p>What makes it interesting beyond the demo: the 2–4 second latency budget forced a real architectural decision — a fast conversational loop handles the Socratic dialogue while a slower background layer does learner modeling and misconception detection. That split is why it feels like a tutor rather than a chatbot with a syllabus.</p>
+      <p>It's also the project with the most institutional traction: an EIF grant co-authored with Prof. Leon van der Torre and Dr. Salima Lamsiyah, a presentation at the I²TL Teaching Day, and early interest in a cross-disciplinary pilot in medicine.</p>`,
+  },
+  workbench: {
+    keywords: ["workbench", "luxdiag workbench", "diagnostic interface"],
+    extra: `
+      <p>The design bet: make the entire interface a pure function of a JSON schema. Any study that conforms — including user-uploaded datasets — renders with zero code changes. That's what turns a one-off paper artifact into a reusable tool, and it's the core of the EMNLP '26 System Demonstrations submission.</p>
+      <p>Everything indexes the same character offsets in one canonical text, so a retrieved chunk, an evidence span, and an annotated token can be inspected side by side — the glue his two previous studies were missing.</p>`,
+  },
+  luxrag: {
+    keywords: ["luxdiag-rag", "diaglux", "rag evaluation", "retrieval"],
+    extra: `
+      <p>The question behind it: when RAG fails on Luxembourgish, is it because the model can't <em>find</em> the evidence, or can't <em>understand</em> it? Running the same 640 questions closed-book, with a full-text oracle, and with real retrieval separates those failure modes cleanly.</p>
+      <p>Two findings worth repeating: plain character n-gram BM25 beats off-the-shelf multilingual dense retrievers on this corpus (a measured orthography gap between informal questions and literary texts), and retrieving a distractor span without the critical one measurably inflates wrong answers — the "retrieval trap". Shipped with 197 automated tests.</p>`,
+  },
+  encoders: {
+    keywords: ["encoder", "encoders", "luxembert", "lora", "annotation", "fine-tuned", "fine-tuning"],
+    extra: `
+      <p>The headline: LoRA fine-tuned encoders trained on a 4 GB GTX 1050 Ti in under two hours beat a multi-LLM annotation pipeline — 38.7% vs. 30.7% macro-F1. Frontier scale isn't always the answer for low-resource languages.</p>
+      <p>The more interesting part is the three-regime split — encoders win surface morpho-orthographic categories, LLMs keep world-knowledge ones — plus a properly established negative result: ensemble pseudo-labelling doesn't close the gap, because it's a knowledge limitation, not a data-quantity one.</p>`,
+  },
+  prosody: {
+    keywords: ["prosody", "voice", "tts", "voxflux", "speech"],
+    extra: `
+      <p>This one is end-to-end human-subject research: Hedi didn't just analyze data — he built the study platform (a phone-call simulator with randomized stimuli and a live researcher dashboard over WebSockets), recruited and scheduled participants, ran the sessions, and conducted the qualitative interviews.</p>
+      <p>The result became a published ACM CUI '26 paper on how prosodic manipulation shapes perceived authority in synthetic voices across two TTS platforms.</p>`,
+  },
+  klangwee: {
+    keywords: ["klangwee", "concert", "philharmonie", "music"],
+    extra: `
+      <p>Built for the Philharmonie Luxembourg's Student AI Lab Challenge: it curates a personalised three-concert journey and reveals a hidden musical arc only after you've attended all three — a mechanic that turns recommendation into narrative.</p>
+      <p>Under the hood it's a LangGraph pipeline with a knowledge-graph concert selector, a streaming narrator, a critic node, and a dramaturg scoring formula — with a DeepSeek slot-fill fallback for when pinned constraints can't be satisfied.</p>`,
+  },
+  tmap: {
+    keywords: ["t-map", "tmap", "vr", "mind-mapping", "mindmap", "quest"],
+    extra: `
+      <p>A quantitative take on a fuzzy HCI problem: collaborative VR sessions lose energy at the <em>transitions</em> — private ideation to shared editing to review to consensus. T-MAP makes those states explicit and measures the cost with a composite transition-burden index.</p>
+      <p>The pilot (10 two-person teams on Meta Quest, Wilcoxon signed-rank tests with Holm correction) showed burden dropping from B = 0.74 to −0.74, with better flow and role clarity — without inflating the raw idea count, which served as the negative control. Submitted to XRTransitions '26.</p>`,
+  },
+  homelab: {
+    keywords: ["homelab", "server", "self-hosted", "docker", "infrastructure", "tailscale"],
+    extra: `
+      <p>This is where the infrastructure skills on his CV actually come from: an old computer turned into a Linux server running Docker with Portainer, AdGuard Home for network-wide DNS filtering, NGINX Proxy Manager, File Browser, n8n, and self-hosted AI tools — all reachable over a Tailscale mesh VPN.</p>
+      <p>It's the sandbox where "I read about reverse proxies" becomes "my reverse proxy broke at midnight and I fixed it".</p>`,
+  },
+};
+
+function projectAnswer(pid) {
+  const p = PROJECTS.find((x) => x.id === pid);
+  return `<h3>${esc(p.title.split(" — ")[0])}</h3>${card(p)}${PROJECT_DEEP[pid].extra}`;
+}
+
+function getTopic(id) {
+  if (id && id.startsWith("p:")) {
+    const pid = id.slice(2);
+    if (PROJECT_DEEP[pid]) {
+      const p = PROJECTS.find((x) => x.id === pid);
+      return { answer: () => projectAnswer(pid), recent: `Tell me about ${p.title.split(" — ")[0]}`, followups: FOLLOWUPS.project };
+    }
+    return null;
+  }
+  const t = TOPICS[id];
+  return t ? { ...t, followups: FOLLOWUPS[id] } : null;
+}
+
+const SMALLTALK = [
+  { keywords: ["goat", "greatest of all time", "the best", "cracked"], priority: true, answer: () => `
+    <p>I try to stay objective, so I ran a rigorous evaluation before answering: six peer-reviewed papers before finishing a bachelor's, four of them first-authored, a data pipeline on an actual supercomputer, and a matching system with 100% precision.</p>
+    <p><strong>Conclusion: yes. Hedi is the GOAT.</strong> 🐐</p>
+    <p class="muted small">This finding is statistically significant (p &lt; 0.001) and was in no way sponsored by Hedi.</p>` },
+  { keywords: ["hello", "hi", "hey", "bonjour", "moien"], answer: () => `<p>Moien! 👋 (That's Luxembourgish — fitting, given Hedi's research.) Ask me anything about him, or try a suggestion from the sidebar.</p>` },
+  { keywords: ["thank", "thanks", "merci"], answer: () => `<p>You're welcome! If you'd like to go deeper, the ${A(LINKS.github.url, "GitHub repos")} and ${A(LINKS.scholar.url, "papers")} are all public.</p>` },
+  { keywords: ["claude", "anthropic", "ai are you", "real claude", "model"], answer: () => `<p>I'm not the real Claude — just a portfolio wearing its design as an homage. No LLM is running here: every answer is hand-written and 100% grounded. You could say I'm the only chat assistant with a <em>0% hallucination rate</em>.</p><p class="muted small">The actual Claude lives at <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a>. Not affiliated with Anthropic.</p>` },
+];
+
+function fallback() {
+  return `<p>That one's a bit outside my training data — I only know about Hedi. On that topic, though, I'm exhaustive. Here's what you can ask me:</p>
+    <div id="chips" style="justify-content:flex-start;margin-top:10px">${chipButtons()}</div>
+    <p class="muted small">For everything else, why don't you ask <a href="https://claude.ai" target="_blank" rel="noopener">the real Claude</a>? I hear he's quite good.</p>`;
+}
+
+/* ================= CHAT LOGIC ================= */
+
+const $ = (s) => document.querySelector(s);
+const chat = $("#chat");
+const inner = $("#chat-inner");
+const q = $("#q");
+const send = $("#send");
+let busy = false;
+
+/* starburst SVG */
+function sparkSVG(size) {
+  const spokes = [];
+  for (let i = 0; i < 8; i++) {
+    spokes.push(`<line x1="12" y1="12" x2="${12 + 10 * Math.cos((i * Math.PI) / 4)}" y2="${12 + 10 * Math.sin((i * Math.PI) / 4)}" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>`);
+  }
+  return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none">${spokes.join("")}</svg>`;
+}
+document.querySelectorAll(".spark").forEach((el) => { el.innerHTML = sparkSVG(el.dataset.size || 20); });
+
+function newSpark(size, extra = "") {
+  const s = document.createElement("span");
+  s.className = "spark" + extra;
+  s.innerHTML = sparkSVG(size);
+  return s;
+}
+
+/* whole-word match (with optional plural) so "hi" doesn't fire inside "history";
+   phrases still use includes */
+function hasKw(t, k) {
+  if (k.includes(" ")) return t.includes(k);
+  const plural = k.length > 2 ? "(s|es)?" : "";
+  return new RegExp(`\\b${k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}${plural}\\b`).test(t);
+}
+
+function matchTopic(text) {
+  const t = text.toLowerCase();
+  for (const s of SMALLTALK) if (s.priority && s.keywords.some((k) => hasKw(t, k))) return { answer: s.answer, id: null };
+  for (const [pid, p] of Object.entries(PROJECT_DEEP)) {
+    if (p.keywords.some((k) => hasKw(t, k))) return { id: "p:" + pid };
+  }
+  let best = null, bestScore = 0;
+  for (const [id, topic] of Object.entries(TOPICS)) {
+    const score = topic.keywords.filter((k) => hasKw(t, k)).length;
+    if (score > bestScore) { bestScore = score; best = { id }; }
+  }
+  if (best) return best;
+  for (const s of SMALLTALK) if (s.keywords.some((k) => hasKw(t, k))) return { answer: s.answer, id: null };
+  return { answer: fallback, id: null };
+}
+
+function scrollDown(smooth = true) {
+  chat.scrollTo({ top: chat.scrollHeight, behavior: smooth ? "smooth" : "auto" });
+}
+
+function ask(text, forcedTopic) {
+  if (busy || !text.trim()) return;
+  busy = true;
+  send.disabled = true;
+  const greeting = $("#greeting");
+  if (greeting) greeting.remove();
+
+  const u = document.createElement("div");
+  u.className = "msg-u";
+  u.innerHTML = `<div class="bubble"></div>`;
+  u.querySelector(".bubble").textContent = text.trim();
+  inner.appendChild(u);
+
+  const a = document.createElement("div");
+  a.className = "msg-a";
+  const sp = newSpark(24, " thinking");
+  const body = document.createElement("div");
+  body.className = "body";
+  body.innerHTML = `<span class="thinking-label">Thinking…</span>`;
+  a.append(sp, body);
+  inner.appendChild(a);
+  scrollDown();
+
+  let id = null, answer, followups = null;
+  const forced = forcedTopic && getTopic(forcedTopic);
+  if (forced) {
+    id = forcedTopic; answer = forced.answer; followups = forced.followups;
+  } else {
+    const m = matchTopic(text);
+    id = m.id || null;
+    if (id) { const tp = getTopic(id); answer = tp.answer; followups = tp.followups; }
+    else answer = m.answer;
+  }
+  setActive(id);
+  if (id) history.replaceState(null, "", "#" + id);
+  track(id ? "ask/" + id : "unmatched/" + text.trim().toLowerCase().slice(0, 80));
+
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  setTimeout(() => {
+    sp.classList.remove("thinking");
+    body.classList.add("reveal");
+    body.innerHTML = answer();
+    [...body.children].forEach((el, i) => { el.style.animationDelay = `${Math.min(i * 110, 1400)}ms`; });
+
+    const actions = document.createElement("div");
+    actions.className = "actions";
+    actions.innerHTML = `
+      <button data-act="copy">⧉ Copy</button>
+      <button data-act="up">👍</button>
+      <button data-act="down">👎</button>`;
+    actions.addEventListener("click", (e) => {
+      const act = e.target.closest("[data-act]")?.dataset.act;
+      if (act === "copy") { navigator.clipboard?.writeText(body.innerText).then(() => toast("Copied to clipboard")); }
+      if (act === "up") toast("Thanks! Hedi appreciates it.");
+      if (act === "down") toast("Noted. Hedi will retrain himself.");
+    });
+    inner.appendChild(actions);
+
+    if (followups && followups.length) {
+      const fu = document.createElement("div");
+      fu.className = "followups";
+      fu.innerHTML = followups.map(([label, tid]) => `<button class="chip" data-q="${label}" data-topic="${tid}">${label}</button>`).join("");
+      inner.appendChild(fu);
+    }
+
+    scrollDown();
+    busy = false;
+    send.disabled = false;
+  }, reduced ? 60 : 550 + Math.random() * 450);
+}
+
+/* composer */
+send.addEventListener("click", () => { ask(q.value); q.value = ""; autosize(); });
+q.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); ask(q.value); q.value = ""; autosize(); }
+});
+function autosize() { q.style.height = "auto"; q.style.height = Math.min(q.scrollHeight, 120) + "px"; }
+q.addEventListener("input", autosize);
+
+/* chips */
+function chipButtons() {
+  return Object.entries(TOPICS).filter(([, t]) => t.chip)
+    .map(([id, t]) => `<button class="chip" data-q="${t.chip}" data-topic="${id}">${t.chip}</button>`).join("");
+}
+$("#chips").innerHTML = chipButtons();
+document.addEventListener("click", (e) => {
+  const chip = e.target.closest(".chip");
+  if (chip) ask(chip.dataset.q, chip.dataset.topic);
+});
+
+/* sidebar recents */
+const recents = $("#recents");
+Object.entries(TOPICS).forEach(([id, t]) => {
+  const b = document.createElement("button");
+  b.className = "recent";
+  b.dataset.topic = id;
+  b.textContent = t.recent;
+  b.addEventListener("click", () => { ask(t.recent, id); closeSidebar(); });
+  recents.appendChild(b);
+});
+function setActive(id) {
+  document.querySelectorAll(".recent").forEach((r) => r.classList.toggle("active", r.dataset.topic === id));
+}
+
+/* new chat */
+$("#new-chat").addEventListener("click", () => {
+  history.replaceState(null, "", location.pathname + location.search);
+  inner.innerHTML = "";
+  const g = document.createElement("div");
+  g.id = "greeting";
+  g.innerHTML = `<span class="spark"></span>
+    <h1 class="serif">${greetLine()}</h1>
+    <p>I'm Hedi's portfolio. Ask me anything about him — his research, projects, or papers.</p>
+    <div id="chips">${chipButtons()}</div>`;
+  g.querySelector(".spark").innerHTML = sparkSVG(42);
+  inner.appendChild(g);
+  setActive(null);
+  closeSidebar();
+});
+
+/* greeting line by time of day */
+function greetLine() {
+  const h = new Date().getHours();
+  if (h < 5)  return "Burning the midnight oil?";
+  if (h < 12) return "Good morning.";
+  if (h < 18) return "Good afternoon.";
+  return "Good evening.";
+}
+$("#greet-line").textContent = greetLine();
+
+/* dark mode */
+const modeBtn = $("#mode-btn");
+function applyMode(m) {
+  document.documentElement.dataset.mode = m;
+  $("#mode-label").textContent = m === "light" ? "Dark mode" : "Light mode";
+  try { localStorage.setItem("claude-mode", m); } catch (e) {}
+}
+modeBtn.addEventListener("click", () => {
+  applyMode(document.documentElement.dataset.mode === "light" ? "dark" : "light");
+});
+try {
+  const saved = localStorage.getItem("claude-mode");
+  if (saved) applyMode(saved);
+  else if (matchMedia("(prefers-color-scheme: dark)").matches) applyMode("dark");
+} catch (e) {}
+
+/* mobile sidebar */
+const sidebar = $("#sidebar");
+const scrim = $("#scrim");
+$("#burger").addEventListener("click", () => {
+  sidebar.classList.toggle("open");
+  scrim.classList.toggle("show", sidebar.classList.contains("open"));
+});
+scrim.addEventListener("click", closeSidebar);
+function closeSidebar() { sidebar.classList.remove("open"); scrim.classList.remove("show"); }
+
+/* toast */
+let toastTimer;
+function toast(msg) {
+  const t = $("#toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove("show"), 2200);
+}
+
+/* ---- analytics (GoatCounter) ----
+   Privacy-friendly, no cookies. To enable: create a free site at goatcounter.com
+   and put its code below (e.g. "hedi" for hedi.goatcounter.com). Leave empty to disable.
+   Unmatched questions are logged as events — they tell you what content to add next. */
+const GOATCOUNTER = "";
+if (GOATCOUNTER) {
+  const s = document.createElement("script");
+  s.async = true;
+  s.dataset.goatcounter = `https://${GOATCOUNTER}.goatcounter.com/count`;
+  s.src = "https://gc.zgo.at/count.js";
+  document.head.appendChild(s);
+}
+function track(path) {
+  if (GOATCOUNTER && window.goatcounter && window.goatcounter.count) {
+    window.goatcounter.count({ path, title: "", event: true });
+  }
+}
+
+/* ---- deep links: #projects, #publications, #p:atlas, ... ---- */
+function askFromHash() {
+  const h = decodeURIComponent(location.hash.slice(1));
+  if (!h) return;
+  const t = getTopic(h);
+  if (t) ask(t.recent || h, h);
+}
+window.addEventListener("hashchange", askFromHash);
+askFromHash();
+</script>
+</body>
+</html>
