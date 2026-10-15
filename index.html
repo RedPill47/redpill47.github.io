@@ -406,9 +406,10 @@ const EXPERIENCE = [
     title: "Research Assistant — FSTM, Dept. of Computer Science, University of Luxembourg",
     meta: "Apr 2026 – Present",
     bullets: [
-      "LLM-based annotation and retrieval-augmented evaluation for Luxembourgish: reproducible Python pipelines orchestrating OpenAI, Anthropic and DeepSeek APIs, with self-hosted Langfuse observability for full prompt and cost traceability.",
+      "<strong>Main focus:</strong> developing ATLAS, the EIF-funded Socratic AI tutoring platform — full-stack FastAPI / Next.js multi-agent system with RAG over educator course materials and a teacher analytics dashboard.",
+      "Alongside, research on LLM-based annotation and retrieval-augmented evaluation for Luxembourgish: reproducible Python pipelines orchestrating OpenAI, Anthropic and DeepSeek APIs, with self-hosted Langfuse observability for full prompt and cost traceability.",
       "Evaluation frameworks scoring LLMs and fine-tuned encoders against expert human annotations across 11 diagnostic linguistic categories.",
-      "Two reproducible open-source studies written up for publication.",
+      "Joint first author of two LaTeLL 2026 papers (LuxDiag-RAG, and human-in-the-loop multi-LLM expansion of Luxembourgish educational data), plus an open-source encoder-vs-LLM annotation study.",
     ],
   },
   {
@@ -470,7 +471,7 @@ const PROJECTS = [
   {
     id: "luxrag",
     title: "LuxDiag-RAG — Diagnostic RAG Evaluation for Luxembourgish",
-    meta: "2026 · LaTeLL 2026 (submitted)",
+    meta: "2026 · LaTeLL 2026 paper",
     url: "https://github.com/RedPill47/DiagLux-RAG",
     sub: "Separating retrieval failure from comprehension failure",
     bullets: [
@@ -566,9 +567,18 @@ const PUBLICATIONS = [
     title: "How Authoritative Can Synthetic Voices Sound? Prosodic Manipulation and Perceptual Evaluation Across Two TTS Platforms",
     authors: "<strong>H. Tebourbi</strong>, A. Stassart, S. Rastegar, S. Vijapurapu, A. Sergeeva, A. Leschanowsky",
     link: { label: "DOI", url: "https://doi.org/10.1145/3816046.3816298" } },
+  { venue: "LaTeLL '26", venueUrl: "https://acl-bg.org/proceedings/2026/LaTeLL%202026/",
+    title: "LuxDiag-RAG: Diagnostic Evaluation of Retrieval-Augmented Generation for Luxembourgish Reading Comprehension",
+    authors: "K. Murugaraj*, <strong>H. Tebourbi</strong>*, C. Friezas Gonçalves, S. Lamsiyah <span class='muted small'>(*equal contribution)</span>",
+    link: { label: "PDF", url: "https://acl-bg.org/proceedings/2026/LaTeLL%202026/pdf/2026.latell-1.18.pdf" } },
+  { venue: "LaTeLL '26", venueUrl: "https://acl-bg.org/proceedings/2026/LaTeLL%202026/",
+    title: "Assessment of Human-in-the-Loop Multi-LLMs for Low-Resource Educational Data Expansion",
+    authors: "C. Friezas Gonçalves*, <strong>H. Tebourbi</strong>*, C. Schommer, S. Lamsiyah <span class='muted small'>(*equal contribution)</span>",
+    link: { label: "PDF", url: "https://acl-bg.org/proceedings/2026/LaTeLL%202026/pdf/2026.latell-1.19.pdf" } },
 ];
 
 const SERVICE = [
+  { name: "CALM 2027 — Technical Program Committee", detail: "Delft, the Netherlands (with ANT 2027)", url: "https://www.ciad-lab.fr/calm-27/" },
   { name: "AAMAS 2026 (Demonstrations)", detail: "Paphos, Cyprus", url: "https://cyprusconferences.org/aamas2026/call-for-demonstrations/" },
   { name: "MobiSPC 2026", detail: "Athens, Greece", url: "https://cs-conferences.acadiau.ca/mobispc-26/" },
   { name: "EUSPN 2026", detail: "Almaty, Kazakhstan", url: "https://cs-conferences.acadiau.ca/euspn-26/" },
@@ -628,7 +638,7 @@ const TOPICS = {
         <li><strong>Multi-agent systems</strong> — LangGraph and CrewAI pipelines for adaptive, personalized learning.</li>
         <li><strong>AI in education</strong> — Socratic tutoring that asks questions instead of handing out answers.</li>
       </ul>
-      <p>Along the way he's picked up <strong>6 peer-reviewed publications</strong> (AAMAS, MobiSPC, MDPI, EUSPN, CALM, CUI), reviews for several international venues, and did an Erasmus+ semester in Łódź, Poland.</p>
+      <p>Along the way he's picked up <strong>8 peer-reviewed publications</strong> (AAMAS, MobiSPC, MDPI, EUSPN, CALM, CUI, LaTeLL), reviews for several international venues, and did an Erasmus+ semester in Łódź, Poland.</p>
       <p>The short version: he spent his bachelor's doing the kind of work that usually starts in a master's — publishing, peer-reviewing, and shipping research software people actually use.</p>
       <p class="muted small">Want to go deeper? Ask about his projects, publications, or experience — or pick something from the sidebar.</p>`,
   },
@@ -640,7 +650,7 @@ const TOPICS = {
       <h3>Professional experience</h3>
       <p>Hedi's CV has an unusual shape for someone who just finished a bachelor's degree: <strong>three research positions and a startup role</strong>, held in parallel with his studies rather than after them. In rough order of recency:</p>
       ${EXPERIENCE.map(card).join("")}
-      <p>What ties these together is that he keeps ending up as the person who <em>builds the pipeline</em> — whether that's LLM evaluation infrastructure at FSTM, a 594-million-record harmonization system on a supercomputer at LISER, or a robot demo that has to work in front of a live audience at the Robolab.</p>
+      <p>What ties these together is that he keeps ending up as the person who <em>builds the pipeline</em> — whether that's the ATLAS tutoring platform and LLM evaluation infrastructure at FSTM, a 594-million-record harmonization system on a supercomputer at LISER, or a robot demo that has to work in front of a live audience at the Robolab.</p>
       <p class="muted small">Happy to expand on any of these — just ask about LISER, the AI Robolab, or Deelan specifically.</p>`,
   },
   projects: {
@@ -662,7 +672,7 @@ const TOPICS = {
     keywords: ["publication", "paper", "research", "published", "aamas", "cui", "mdpi", "doi", "cite", "scholar"],
     answer: () => `
       <h3>Publications</h3>
-      <p>Six peer-reviewed papers so far — <strong>four of them first-authored</strong>, which is genuinely uncommon before a master's degree. The full record lives on ${A(LINKS.scholar.url, "Google Scholar")}; here's what's in it:</p>
+      <p>Eight peer-reviewed papers so far — <strong>four first-authored, plus two as joint first author</strong>, which is genuinely uncommon before a master's degree. The full record lives on ${A(LINKS.scholar.url, "Google Scholar")}; here's what's in it:</p>
       <div class="card" style="padding-top:4px;padding-bottom:4px">
       ${PUBLICATIONS.map((p) => `<div class="pub">
         <span class="venue">${p.venueUrl ? A(p.venueUrl, p.venue) : p.venue}</span>
@@ -671,7 +681,7 @@ const TOPICS = {
         <div class="authors">${p.authors}</div>
       </div>`).join("")}
       </div>
-      <p class="muted small">If you're looking for the through-line: multi-agent systems meet language learning — first building AI tutors (AAMAS, MobiSPC, MDPI), then turning a critical eye on how such systems should be evaluated (CUI, plus two papers currently under review).</p>`,
+      <p class="muted small">If you're looking for the through-line: multi-agent systems meet language learning — first building AI tutors (AAMAS, MobiSPC, MDPI), then turning a critical eye on how such systems should be evaluated (CUI, the two LaTeLL papers on Luxembourgish RAG and LLM-generated reading comprehension data, plus more currently under review).</p>`,
   },
   skills: {
     recent: "Tech stack overview",
@@ -691,14 +701,14 @@ const TOPICS = {
       <h3>Education</h3>
       <p>Hedi just graduated — <strong>BiCS class of 2026</strong> — and he's not going far: he's staying at the University of Luxembourg for a <strong>Master in Information and Computer Sciences</strong>, starting this autumn.</p>
       ${EDUCATION.map(card).join("")}
-      <p class="muted small">The Erasmus semester in Poland is where the international streak started; the publishing and peer-reviewing followed soon after. By graduation he'd co-authored six papers — ask me about them.</p>`,
+      <p class="muted small">The Erasmus semester in Poland is where the international streak started; the publishing and peer-reviewing followed soon after. He's now co-authored eight papers — ask me about them.</p>`,
   },
   service: {
     recent: "Peer review service",
     keywords: ["service", "review", "reviewer", "committee", "acm"],
     answer: () => `
       <h3>Academic service</h3>
-      <p>Peer review is usually a grad-school-and-up activity, but Hedi has already been invited to review for <strong>six international venues</strong> in AI, HCI, and multi-agent systems:</p>
+      <p>Peer review is usually a grad-school-and-up activity, but Hedi has already been invited to review for <strong>six international venues</strong> in AI, HCI, and multi-agent systems, and now sits on the <strong>technical program committee of CALM 2027</strong>:</p>
       <ul>${SERVICE.map((s) => `<li>${s.url ? A(s.url, esc(s.name)) : esc(s.name)} <span class="muted">— ${esc(s.detail)}</span></li>`).join("")}</ul>
       <p>He's also an ${A("https://www.acm.org/", "ACM student member")}. And if you've ever wondered who writes those "Reviewer 2" comments — for these venues, occasionally him. He assures me he's the kind one.</p>`,
   },
@@ -841,7 +851,7 @@ function getTopic(id) {
 
 const SMALLTALK = [
   { keywords: ["goat", "greatest of all time", "the best", "cracked"], priority: true, answer: () => `
-    <p>I try to stay objective, so I ran a rigorous evaluation before answering: six peer-reviewed papers before finishing a bachelor's, four of them first-authored, a data pipeline on an actual supercomputer, and a matching system with 100% precision.</p>
+    <p>I try to stay objective, so I ran a rigorous evaluation before answering: eight peer-reviewed papers, six of them first- or joint-first-authored, a data pipeline on an actual supercomputer, and a matching system with 100% precision.</p>
     <p><strong>Conclusion: yes. Hedi is the GOAT.</strong> 🐐</p>
     <p class="muted small">This finding is statistically significant (p &lt; 0.001) and was in no way sponsored by Hedi.</p>` },
   { keywords: ["hello", "hi", "hey", "bonjour", "moien"], answer: () => `<p>Moien! 👋 (That's Luxembourgish — fitting, given Hedi's research.) Ask me anything about him, or try a suggestion from the sidebar.</p>` },

@@ -14,10 +14,10 @@ and see what happens.
 
 - **Research** — LLMs for low-resource languages (Luxembourgish), RAG
   evaluation, multi-agent systems, AI in education
-- **6 peer-reviewed publications** (AAMAS, MobiSPC, MDPI, EUSPN, CALM, ACM CUI)
+- **8 peer-reviewed publications** (AAMAS, MobiSPC, MDPI, EUSPN, CALM, ACM CUI, LaTeLL ×2)
 - **Featured projects** — ATLAS, LuxDiag Workbench, LuxDiag-RAG, KlangWee,
   and more
-- Reviewer for AAMAS, MobiSPC, EUSPN, CALM, ArtInHCI
+- Reviewer for AAMAS, MobiSPC, EUSPN, CALM, ArtInHCI; technical program committee, CALM 2027
 
 ## How it works
 
