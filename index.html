@@ -632,7 +632,7 @@ const TOPICS = {
     chip: "Who is Hedi?",
     keywords: ["who", "about", "hedi", "yourself", "intro", "bio"],
     answer: () => `
-      <p>Hedi Tebourbi is a <strong>computer science researcher at the University of Luxembourg</strong> (FSTM, Department of Computer Science). He just graduated with a Bachelor in Computer Science (BiCS, 2023–2026) and is pursuing a <strong>Master in Information and Computer Sciences</strong> at the same university, alongside his work as a research assistant.</p>
+      <p>Hedi Tebourbi is a <strong>computer science researcher at the University of Luxembourg</strong> (FSTM, Department of Computer Science). He just graduated with a Bachelor in Computer Science (BiCS, 2023–2026) and is pursuing a <strong>Master in Information and Computer Sciences</strong> at the same university, alongside his work as a research assistant. Research is what he enjoys most, and the plan is to continue on to a <strong>PhD</strong>.</p>
       <p>His work sits at the intersection of a few themes:</p>
       <ul>
         <li><strong>LLMs for low-resource languages</strong> — especially Luxembourgish: annotation, evaluation, and RAG.</li>
@@ -697,11 +697,12 @@ const TOPICS = {
   education: {
     recent: "Education history",
     chip: "Education",
-    keywords: ["education", "degree", "study", "studies", "bachelor", "university", "erasmus", "school"],
+    keywords: ["education", "degree", "study", "studies", "bachelor", "master", "university", "erasmus", "school", "phd", "doctorate", "doctoral", "future", "plans", "goal", "goals"],
     answer: () => `
       <h3>Education</h3>
       <p>Hedi just graduated — <strong>BiCS class of 2026</strong> — and he's not going far: he's staying at the University of Luxembourg for a <strong>Master in Information and Computer Sciences</strong>, starting this autumn.</p>
       ${EDUCATION.map(card).join("")}
+      <p><strong>Next: a PhD.</strong> Hedi is genuinely into research, and he'd like to pursue a PhD after his master's, building on the themes of his work so far: LLMs for low-resource languages, RAG and LLM evaluation, multi-agent systems, and AI in education.</p>
       <p class="muted small">The Erasmus semester in Poland is where the international streak started; the publishing and peer-reviewing followed soon after. He's now co-authored eight papers — ask me about them.</p>`,
   },
   service: {
@@ -761,7 +762,8 @@ const TOPICS = {
     answer: () => `
       <h3>Availability</h3>
       <p>Short answer: <strong>not actively looking right now.</strong> Hedi just graduated and is starting his Master in Information and Computer Sciences at the University of Luxembourg this autumn, alongside his research assistant work — his hands are pleasantly full.</p>
-      <p>That said, he's always glad to hear about research collaborations and genuinely interesting problems — especially anything near low-resource NLP, RAG evaluation, or AI in education. The worst case is a polite no; the best case is a new paper.</p>`,
+      <p>That said, he's always glad to hear about research collaborations and genuinely interesting problems — especially anything near low-resource NLP, RAG evaluation, or AI in education. The worst case is a polite no; the best case is a new paper.</p>
+      <p>Longer term, he's aiming for a <strong>PhD</strong>, so research groups and doctoral positions in these areas are very much of interest.</p>`,
   },
 };
 
