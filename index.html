@@ -459,7 +459,7 @@ const PROJECTS = [
   {
     id: "workbench",
     title: "LuxDiag Workbench — Interactive Diagnostic Interface",
-    meta: "2026 · EMNLP '26 demo (submitted)",
+    meta: "2026 · EACL '27 demo (submitted)",
     url: "https://github.com/RedPill47/luxdiag-workbench",
     sub: "Browser-based inspection of two Luxembourgish NLP studies",
     bullets: [
@@ -588,7 +588,8 @@ const SERVICE = [
 ];
 
 const EXTRAS = [
-  { name: "SAUL — Student Association for University Campus Life", detail: "Board member & social media manager (2024 – present)", url: "https://www.uni.lu/life-en/social-life/student-associations-clubs/saul/" },
+  { name: "SAUL — Student Association for University Campus Life", detail: "Vice president, secretary & social media manager (board member since 2024)", url: "https://www.uni.lu/life-en/social-life/student-associations-clubs/saul/" },
+  { name: "Cybersecurity student association (launching)", detail: "Co-founding, with faculty support — hands-on activities, workshops, hackathons" },
   { name: "Study Programme Representative, BiCS", detail: "Student voice in the programme steering committee (2023 – 2026)" },
   { name: "Lex Vitae Podcast", detail: "Co-host & co-creator — evidence-based study & wellbeing tips (2024 – 2025)", url: "https://open.spotify.com/show/5PVgeVvvWKVgj9OybVkql9" },
   { name: "ACM Student Member", detail: "2026 – present", url: "https://www.acm.org/" },
@@ -714,12 +715,13 @@ const TOPICS = {
   },
   activities: {
     recent: "Beyond the code",
-    keywords: ["activities", "extracurricular", "podcast", "saul", "hobby", "hobbies", "association", "fun", "beyond", "volunteer"],
+    keywords: ["activities", "extracurricular", "podcast", "saul", "hobby", "hobbies", "association", "fun", "beyond", "volunteer", "cybersecurity", "security", "hackathon", "club", "vice president"],
     answer: () => `
       <h3>Beyond the code</h3>
       <p>Not everything is repositories and rebuttals. A few things Hedi does — or has done — with the other hours of the day:</p>
       <ul>
-        <li>He's an elected board member of ${A("https://www.uni.lu/life-en/social-life/student-associations-clubs/saul/", "SAUL")}, the student association behind campus life and events, where he runs social media — and works shifts at the events themselves (2024 – present).</li>
+        <li>He's <strong>vice president and secretary</strong> of ${A("https://www.uni.lu/life-en/social-life/student-associations-clubs/saul/", "SAUL")}, the student association behind campus life and events, where he also still runs social media — and works shifts at the events themselves (board member since 2024).</li>
+        <li>He's working on launching a <strong>cybersecurity student association</strong> at the university, with the help of his professors: hands-on activities, workshops and hackathons.</li>
         <li>He served as <strong>Study Programme Representative</strong> for the BiCS bachelor: the students' voice in the programme's steering committee, and the person classmates went to when something needed fixing (2023 – 2026).</li>
         <li>He co-created and co-hosted ${A("https://open.spotify.com/show/5PVgeVvvWKVgj9OybVkql9", "Lex Vitae")}, a podcast on evidence-based studying and student wellbeing — complete with a psychologist guest and a companion Substack newsletter (2024 – 2025).</li>
         <li>He's an ${A("https://www.acm.org/", "ACM student member")} (2026 – present).</li>
@@ -790,7 +792,7 @@ const PROJECT_DEEP = {
   workbench: {
     keywords: ["workbench", "luxdiag workbench", "diagnostic interface"],
     extra: `
-      <p>The design bet: make the entire interface a pure function of a JSON schema. Any study that conforms — including user-uploaded datasets — renders with zero code changes. That's what turns a one-off paper artifact into a reusable tool, and it's the core of the EMNLP '26 System Demonstrations submission.</p>
+      <p>The design bet: make the entire interface a pure function of a JSON schema. Any study that conforms — including user-uploaded datasets — renders with zero code changes. That's what turns a one-off paper artifact into a reusable tool, and it's the core of the EACL '27 System Demonstrations submission.</p>
       <p>Everything indexes the same character offsets in one canonical text, so a retrieved chunk, an evidence span, and an annotated token can be inspected side by side — the glue his two previous studies were missing.</p>`,
   },
   luxrag: {
