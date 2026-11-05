@@ -379,7 +379,7 @@ header a.gh { color: var(--text-2); font-size: 13.5px; }
       <button id="send" aria-label="Send"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 13V3M8 3L3.5 7.5M8 3l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     </div>
     <div class="fineprint">
-      This portfolio can't make mistakes — every citation is real.
+      This portfolio can't make mistakes — every citation is real. Questions are logged anonymously to improve it.
       Design homage to <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> by Anthropic · not affiliated
     </div>
   </div>
@@ -976,8 +976,8 @@ function ask(text, forcedTopic) {
     actions.addEventListener("click", (e) => {
       const act = e.target.closest("[data-act]")?.dataset.act;
       if (act === "copy") { navigator.clipboard?.writeText(body.innerText).then(() => toast("Copied to clipboard")); }
-      if (act === "up") toast("Thanks! Hedi appreciates it.");
-      if (act === "down") toast("Noted. Hedi will retrain himself.");
+      if (act === "up") { toast("Thanks! Hedi appreciates it."); track("vote/up/" + (id || "unmatched")); }
+      if (act === "down") { toast("Noted. Hedi will retrain himself."); track("vote/down/" + (id || "unmatched")); }
     });
     inner.appendChild(actions);
 
@@ -1089,23 +1089,42 @@ function toast(msg) {
   toastTimer = setTimeout(() => t.classList.remove("show"), 2200);
 }
 
-/* ---- analytics (GoatCounter) ----
-   Privacy-friendly, no cookies. To enable: create a free site at goatcounter.com
-   and put its code below (e.g. "hedi" for hedi.goatcounter.com). Leave empty to disable.
-   Unmatched questions are logged as events — they tell you what content to add next. */
-const GOATCOUNTER = "";
+/* ---- analytics (GoatCounter: hedi.goatcounter.com) ----
+   Privacy-friendly, no cookies. Set GOATCOUNTER to "" to disable.
+   Logged events: ask/<topic>, unmatched/<question> (what content to add next),
+   vote/up|down/<topic>, click/cv, click/email, click/<host/path> for outbound links. */
+const GOATCOUNTER = "hedi";
+const gcQueue = [];
 if (GOATCOUNTER) {
   const s = document.createElement("script");
   s.async = true;
   s.dataset.goatcounter = `https://${GOATCOUNTER}.goatcounter.com/count`;
   s.src = "https://gc.zgo.at/count.js";
+  // events fired before count.js loads (e.g. a #deep-link question) are queued
+  s.onload = () => { while (gcQueue.length) track(gcQueue.shift()); };
   document.head.appendChild(s);
 }
 function track(path) {
-  if (GOATCOUNTER && window.goatcounter && window.goatcounter.count) {
-    window.goatcounter.count({ path, title: "", event: true });
+  if (!GOATCOUNTER) return;
+  if (window.goatcounter && window.goatcounter.count) {
+    window.goatcounter.count({ path: path.slice(0, 120), title: "", event: true });
+  } else if (gcQueue.length < 20) {
+    gcQueue.push(path);
   }
 }
+document.addEventListener("click", (e) => {
+  const a = e.target.closest("a[href]");
+  if (!a) return;
+  const href = a.getAttribute("href");
+  if (/Hedi_Tebourbi_CV\.pdf$/.test(href)) return track("click/cv");
+  if (href.startsWith("mailto:")) return track("click/email");
+  if (/^https?:/.test(href)) {
+    try {
+      const u = new URL(href);
+      track("click/" + u.hostname.replace(/^www\./, "") + u.pathname.replace(/\/$/, ""));
+    } catch (_) {}
+  }
+});
 
 /* ---- deep links: #projects, #publications, #p:atlas, ... ---- */
 function askFromHash() {
